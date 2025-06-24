@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            height: 400px;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+        
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .features h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            opacity: 0.9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: "✨ ";
+            margin-right: 8px;
+        }
+        
+        .action-button {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .action-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI Study Assistant</h1>
+        <p>Your smart learning companion</p>
+    </div>
+    
+    <div class="status">
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span id="status-text">Ready to help!</span>
+        </div>
+        <div id="video-info">
+            <small>Open a YouTube video to get started</small>
+        </div>
+    </div>
+    
+    <div class="features">
+        <h3>🚀 Features</h3>
+        <ul class="feature-list">
+            <li>Ask questions about video content</li>
+            <li>Get instant AI-powered answers</li>
+            <li>Take smart notes automatically</li>
+            <li>Bookmark important moments</li>
+        </ul>
+        
+        <button class="action-button" id="openChat">
+            💬 Start Learning Session
+        </button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
